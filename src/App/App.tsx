@@ -12,9 +12,7 @@ function App() {
       Hello World
       <hr />
       <Button action={() => alert("Le bouton est clické")}>
-        <div>
-          Hello
-        </div>
+        <div>Hello</div>
       </Button>
       <Button action={() => alert("Le bouton est clické")}>
         <div>Hello</div>
@@ -22,6 +20,7 @@ function App() {
         <div>De Lu</div>
       </Button>
       <Button action={() => alert("Le bouton est clické")}>Hello String</Button>
+      <Button>With Child</Button>
     </div>
   );
 }

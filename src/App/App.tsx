@@ -14,15 +14,12 @@ function App() {
       <Button action={() => alert("Le bouton est clické")}>
         <div>Hello</div>
       </Button>
-
       <Button action={() => alert("Le bouton est clické")}>
         <div>Hello</div>
         <hr />
         <div>De Lu</div>
       </Button>
-
-      <Button action={() => alert("Le bouton est clické")}>Hello String</Button>
-      
+      <Button bgColor='tomato' color='blue' action={() => alert("Le bouton est clické")}>Hello String</Button>
       <Button>With Child</Button>
     </div>
   );

@@ -1,33 +1,17 @@
-import React from "react";
-//import logo from './logo.svg';
-import "./App.css";
-import Button, {DefaultButton, WarningButton} from "./components/Button/Button";
-import ButtonStyle from "./components/Button/Button.module.css";
+import React, { Component } from "react";
+import Button from "./components/Button/Button";
 
-const contentName = "Hello";
-
-function App() {
-  return (
-    <div className="App">
-      {/* comment dans XML*/}
-      Hello World
-      <hr />
-      <Button action={() => alert("Le bouton est clické")}>
-        <div>Hello</div>
-      </Button>
-      <Button style={{fontWeight:900, fontsize:'x-large'}} >
-        <div>Hello</div>
+class App extends Component {
+  render() {
+    return (
+      <div className="app" style={{ textAlign: "center" }}>
+        Valeur du compteur : 1
         <hr />
-        <div>De Lu</div>
-      </Button>
-      <Button bgColor='tomato' color='blue' action={() => alert("Le bouton est clické")}>Hello String</Button>
-      <Button className={ButtonStyle.underline}>With Child</Button>
-      <WarningButton className={ButtonStyle.underline}>Alert Child</WarningButton>
-      <DefaultButton className={ButtonStyle.underline}>Default Child</DefaultButton>
-    </div>
-  );
+        <Button bgColor="tomato"> decrem -1</Button>
+        <Button bgColor="skyblue"> increm -1</Button>
+      </div>
+    );
+  }
 }
 
 export default App;
-
-

@@ -1,9 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import style from "./Button.module.css";
 
 function Button(props) {
-  const [isClicked, setIsClicked] = useState(false);
+  const [isClicked, setisClicked] = useState(false);
+
+  useEffect(() => {
+    if (isClicked) {
+      setTimeout(() => {
+        setisClicked(false);
+      }, 200);
+    }
+  }, [isClicked]);
 
   return (
     <button
@@ -17,7 +25,7 @@ function Button(props) {
         color: props.color,
       }}
       onClick={(event) => {
-        setIsClicked(true);
+        setisClicked(true);
         console.log("isClicked :", isClicked);
       }}
     >

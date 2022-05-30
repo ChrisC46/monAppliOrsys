@@ -20,7 +20,7 @@ function App() {
         <div>De Lu</div>
       </Button>
       <Button bgColor='tomato' color='blue' action={() => alert("Le bouton est clické")}>Hello String</Button>
-      <Button>With Child</Button>
+      <Button >With Child</Button>
     </div>
   );
 }

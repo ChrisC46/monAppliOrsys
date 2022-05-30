@@ -5,7 +5,7 @@ import style from "./Button.module.css";
 function Button(props) {
   return (
     <button
-      className={style.Button}
+      className={style.Button+(props.className ?' '+props.className : '')}
       type={props.type}
       style={{ backgroundColor: props.bgColor, color: props.color }}
     >
@@ -20,6 +20,7 @@ Button.propTypes = {
   children: PropTypes.any.isRequired,
   bgColor: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
+  className : PropTypes.string
 };
 
 Button.defaultProps = {

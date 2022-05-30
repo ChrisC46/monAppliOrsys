@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Button (props) {
-    return <button>Benjamin</button>
+    return <button type={props.type}>{props.children}</button>
 }
 
 export default Button;

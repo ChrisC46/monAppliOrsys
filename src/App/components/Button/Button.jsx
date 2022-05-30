@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import style from "./Button.module.css";
 
 function Button(props) {
+  const [isClicked, setIsClicked] = useState(false);
+
   return (
     <button
-      className={style.Button+(props.className ?' '+props.className : '')}
+      className={`${style.Button}${
+        props.className ? " " + props.className : ""
+      }${isClicked ? " " + style.clicked : ""}`}
       type={props.type}
-      style={{...props.style, backgroundColor: props.bgColor, color: props.color }}
+      style={{
+        ...props.style,
+        backgroundColor: props.bgColor,
+        color: props.color,
+      }}
+      onClick={(event) => {
+        setIsClicked(true);
+        console.log("isClicked :", isClicked);
+      }}
     >
       {props.children}
     </button>
@@ -20,8 +32,8 @@ Button.propTypes = {
   children: PropTypes.any.isRequired,
   bgColor: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
-  className : PropTypes.string,
-  style : PropTypes.object
+  className: PropTypes.string,
+  style: PropTypes.object,
 };
 
 Button.defaultProps = {
@@ -33,13 +45,9 @@ Button.defaultProps = {
 export default Button;
 
 export function WarningButton(props) {
-    return (
-      <Button {...props} bgColor='tomato'></Button>
-    )
-  }
+  return <Button {...props} bgColor="tomato"></Button>;
+}
 
-  export function DefaultButton(props) {
-    return (
-      <Button {...props} bgColor='blue'></Button>
-    )
-  }
+export function DefaultButton(props) {
+  return <Button {...props} bgColor="blue"></Button>;
+}

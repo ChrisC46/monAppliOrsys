@@ -14,10 +14,17 @@ interface IAppState {
 }
 interface IAppProps {}
 
+const images:Array<ImageInterface>=[
+  {id:0,name:'goudig',h:168,w:300, url:"images"},
+  {id:1,name:'quimper',h:183,w:275, url:"t2"},
+  {id:2,name:'paris',h:182,w:277, url:"t3"},
+  {id:3,name:'lyon',h:182,w:277, url:"t4"},
+]
+
 class App extends Component<IAppProps, IAppState> {
   constructor(props:IAppProps){
     super(props);
-    this.state ={currentMeme:emptyMeme, images: []}
+    this.state ={currentMeme:emptyMeme, images: []};
     }
   
   render() {
@@ -26,11 +33,10 @@ class App extends Component<IAppProps, IAppState> {
         <Header/>
         <NavBar/>
         <FlexLayout>
-          <MemeSVGViewer image={undefined} meme={(this.state.currentMeme)}></MemeSVGViewer>
-          <MemeForm meme={this.state.currentMeme} onMemeChange={(meme:MemeInterface)=>{
+          <MemeSVGViewer image={this.state.images.find(e=>e.id===this.state.currentMeme.imageId)} meme={(this.state.currentMeme)} basePath="/media/"/>
+          <MemeForm images={images} meme={this.state.currentMeme} onMemeChange={(meme:MemeInterface)=>{
               this.setState({currentMeme: meme});
-              
-          }}></MemeForm>
+          }} ></MemeForm>
         </FlexLayout>
         <Footer/>
       </div>

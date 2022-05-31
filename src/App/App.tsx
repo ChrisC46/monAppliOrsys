@@ -27,11 +27,15 @@ class App extends Component<IAppProps, IAppState> {
         <NavBar/>
         <FlexLayout>
           <MemeSVGViewer image={undefined} meme={(this.state.currentMeme)}></MemeSVGViewer>
-          <MemeForm meme={this.state.currentMeme}></MemeForm>
+          <MemeForm meme={this.state.currentMeme} onMemeChange={(meme:MemeInterface)=>{
+              this.setState({currentMeme: meme});
+              
+          }}></MemeForm>
         </FlexLayout>
         <Footer/>
       </div>
     );
+    
   }
 }
 

@@ -1,14 +1,8 @@
-import { MemeInterface } from "orsys-tjs-meme";
 import React from "react";
 import styles from "./MemeForm.module.css";
 
-//types
-interface IMemeFormProps {
-  meme: MemeInterface;
-  onMemeChange: Function;
-}
 
-const MemeForm: React.FC<IMemeFormProps> = (props) => {
+const MemeForm = (props) => {
   return (
        <div data-testid="MemeForm" className={styles.MemeForm}>
         <form >
@@ -17,7 +11,6 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
             type="text"
             id="f_titre"
             placeholder="saisir titre"
-            value={props.meme.titre}
              />
           <hr />
           <h2>Image</h2>
@@ -31,11 +24,7 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
           <h2>text</h2>
           <input
             type="text"
-            value={props.meme.text}
-            onChange={(evt:React.ChangeEvent<HTMLInputElement>) =>{
-              console.log(evt.target.value);
-              props.onMemeChange({...props.meme, text:evt.target.value})
-            }}
+
           />
           <div className={styles.half}>
             <div>
@@ -44,11 +33,7 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
               <input
                 type="number"
                 className={styles.smallInput}
-                value={props.meme.x}
-                onChange={(evt:React.ChangeEvent<HTMLInputElement>) =>{
-                  console.log(evt.target.value);
-                  props.onMemeChange({...props.meme, x:Number(evt.target.value)})
-                }}
+
               />
             </div>
             <div>
@@ -57,11 +42,7 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
               <input
                 type="number"
                 className={styles.smallInput}
-                value={props.meme.y}
-                onChange={(evt:React.ChangeEvent<HTMLInputElement>) =>{
-                  console.log(evt.target.value);
-                  props.onMemeChange({...props.meme, y:Number(evt.target.value)})
-                }}
+
               />
             </div>
           </div>
@@ -70,11 +51,7 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
           <input
             type="color"
             id="f_color"
-            value={props.meme.color}
-            onChange={(evt:React.ChangeEvent<HTMLInputElement>) =>{
-              console.log(evt.target.value);
-              props.onMemeChange({...props.meme, color:evt.target.value})
-            }}
+
           />
           <div className={styles.half}>
             <div>
@@ -83,12 +60,9 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
               <input
                 type="number"
                 className={styles.smallInput}
-                value={props.meme.fontSize}
-                onChange={(evt:React.ChangeEvent<HTMLInputElement>) =>{
-                  console.log(evt.target.value);
-                  props.onMemeChange({...props.meme, fontSize:Number(evt.target.value)})
-                }}
+
                 min={0}
+
               />
             </div>
             <div>
@@ -100,11 +74,7 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
                 min="100"
                 step="100"
                 max="900"
-                value={props.meme.fontWeight}
-                onChange={(evt:React.ChangeEvent<HTMLInputElement>) =>{
-                  console.log(evt.target.value);
-                  props.onMemeChange({...props.meme, fontWeight:evt.target.value})
-                }}
+
               />
             </div>
           </div>
@@ -115,11 +85,7 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
               <input
                 id="f_underline"
                 type="checkbox"
-                checked={props.meme.underline}
-                onChange={(evt:React.ChangeEvent<HTMLInputElement>) =>{
-                  console.log(evt.target.value);
-                  props.onMemeChange({...props.meme, underline:evt.target.checked})
-                }}
+
               />
             </div>
             <div>
@@ -128,11 +94,7 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
               <input
                 id="f_italic"
                 type="checkbox"
-                checked={props.meme.italic}
-                onChange={(evt:React.ChangeEvent<HTMLInputElement>) =>{
-                  console.log(evt.target.value);
-                  props.onMemeChange({...props.meme, italic:evt.target.checked})
-                }}
+
               />
             </div>
           </div>

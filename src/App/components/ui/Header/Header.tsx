@@ -11,7 +11,7 @@ const Header: React.FC<IHeaderProps> = (props) => {
   const [state, setstate] = useState(initialState);
   return (
     <div className={style.Header} data-testid="Header">
-      Header
+      <h1>drôle de meme </h1>
     </div>
   );
 };

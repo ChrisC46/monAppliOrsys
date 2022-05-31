@@ -10,6 +10,30 @@
       "withTest": true,
       "withStory": false,
       "withLazy": false
+    },
+    "func":{
+      "path": "src/App/components/functionnal",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": false,
+      "withLazy": false,
+      "customTemplates":{"component":"grc-templates/func_hook/TemplateName.tsx"}
+    },
+    "ui":{
+      "path": "src/App/components/ui",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": false,
+      "withLazy": false,
+      "customTemplates":{"component":"grc-templates/func_hook/TemplateName.tsx"}
+    },
+    "layout":{
+      "path": "src/App/components/layout",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": false,
+      "withLazy": false,
+      "customTemplates":{"component":"grc-templates/func_hook/TemplateName.tsx"}
     }
   }
 }

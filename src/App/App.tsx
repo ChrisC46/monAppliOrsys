@@ -1,14 +1,35 @@
 import React, { Component } from "react";
 import Button from "./components/Button/Button";
+interface IAppState {
+  message?: "hello" | "goodbye";
+  counter: number;
+}
+interface IAppProps {}
 
-class App extends Component {
+class App extends Component<IAppProps, IAppState> {
+  constructor(props: {}) {
+    super(props);
+    this.state = { message: "hello", counter: 0 };
+  }
   render() {
     return (
       <div className="app" style={{ textAlign: "center" }}>
-        Valeur du compteur : 1
+        Valeur du compteur : {this.state.counter}
         <hr />
-        <Button bgColor="tomato"> decrem -1</Button>
-        <Button bgColor="skyblue"> increm -1</Button>
+        <Button
+          action={() => {
+            this.setState({counter:this.state.counter-1});
+            console.log(this.state.counter);
+          }}
+          bgColor="tomato"
+        >
+          {" "}
+          decrem -1
+        </Button>
+        <Button action={() => {
+          this.setState({counter:this.state.counter+1});
+          console.log(this.state.counter)
+        }} bgColor="skyblue"> increm +1</Button>
       </div>
     );
   }

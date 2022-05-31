@@ -27,6 +27,9 @@ function Button(props) {
       onClick={(event) => {
         setisClicked(true);
         console.log("isClicked :", isClicked);
+        if(props.action && typeof props.action==='function'){
+            props.action();
+        };
       }}
     >
       {props.children}

@@ -2,7 +2,17 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import style from "./Button.module.css";
 
-function Button(props) {
+interface iButtonProps {
+    type?: 'button'|'submit'|'reset',
+    action ?: Function,
+    children:React.ReactElement| Array<React.ReactNode>|string,
+    bgColor?:string,
+    color?:string,
+    className?:string,
+    style?: object,
+}
+
+const Button:React.FunctionComponent<iButtonProps>=(props) => {
   const [isClicked, setIsClicked] = useState(false);
 
   useEffect(() => {
@@ -38,7 +48,7 @@ function Button(props) {
 }
 
 Button.propTypes = {
-  type: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(['button','submit','reset']),
   action: PropTypes.func,
   children: PropTypes.any.isRequired,
   bgColor: PropTypes.string.isRequired,
@@ -55,10 +65,10 @@ Button.defaultProps = {
 
 export default Button;
 
-export function WarningButton(props) {
+export const WarningButton:React.FunctionComponent<iButtonProps>=(props) => {
   return <Button {...props} bgColor="tomato"></Button>;
 }
 
-export function DefaultButton(props) {
+export const DefaultButton:React.FunctionComponent<iButtonProps>=(props) => {
   return <Button {...props} bgColor="blue"></Button>;
 }

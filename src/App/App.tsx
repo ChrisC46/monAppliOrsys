@@ -11,6 +11,16 @@ class App extends Component<IAppProps, IAppState> {
     super(props);
     this.state = { message: "hello", counter: 0 };
   }
+
+  componentDidMount(){
+    console.log('Composant app monté');
+  }
+
+  componentDidUpdate(prevProps:IAppProps, prevState:IAppState){
+      console.log('state post update', prevState,this.state);
+      console.log('Props post update', prevProps, this.props);
+  }
+
   render() {
     return (
       <div className="app" style={{ textAlign: "center" }}>

@@ -6,6 +6,7 @@ import Footer from "./components/ui/Footer/Footer";
 import Header from "./components/ui/Header/Header";
 import MemeForm from "./components/ui/MemeForm/MemeForm";
 import NavBar from "./components/ui/NavBar/NavBar";
+import 'bootstrap/dist/css/bootstrap.css';
 
 interface IAppState {
   currentMeme: MemeInterface,

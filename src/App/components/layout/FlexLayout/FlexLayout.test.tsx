@@ -5,7 +5,7 @@ import FlexLayout from './FlexLayout';
 
 describe('<FlexLayout />', () => {
   test('it should mount', () => {
-    render(<FlexLayout />);
+    render(<FlexLayout>Hello</FlexLayout>);
     
     const flexLayout = screen.getByTestId('FlexLayout');
 

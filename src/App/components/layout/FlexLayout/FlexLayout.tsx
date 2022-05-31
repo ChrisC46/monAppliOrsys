@@ -1,20 +1,20 @@
 import React, { ReactElement, ReactNode } from "react";
 import PropTypes from "prop-types";
-import style from "./TemplateName.module.css";
+import style from "./FlexLayout.module.css";
 
-interface ITemplateNameProps {
+interface IFlexLayoutProps {
   children: string | Array<ReactNode> | ReactElement;
 }
 
-const TemplateName: React.FC<ITemplateNameProps> = (props) => {
+const FlexLayout: React.FC<IFlexLayoutProps> = (props) => {
   return (
-    <div className={style.TemplateName} data-testid="TemplateName">
+    <div className={style.FlexLayout} data-testid="FlexLayout">
       {props.children}
     </div>
   );
 };
 
-TemplateName.propTypes = {
+FlexLayout.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.array,
@@ -22,4 +22,4 @@ TemplateName.propTypes = {
   ]).isRequired,
 };
 
-export default TemplateName;
+export default FlexLayout;

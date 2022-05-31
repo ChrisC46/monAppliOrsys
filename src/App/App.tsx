@@ -12,13 +12,13 @@ class App extends Component<IAppProps, IAppState> {
     this.state = { message: "hello", counter: 0 };
   }
 
-  componentDidMount(){
-    console.log('Composant app monté');
+  componentDidMount() {
+    console.log("Composant app monté");
   }
 
-  componentDidUpdate(prevProps:IAppProps, prevState:IAppState){
-      console.log('state post update', prevState,this.state);
-      console.log('Props post update', prevProps, this.props);
+  componentDidUpdate(prevProps: IAppProps, prevState: IAppState) {
+    console.log("state post update", prevState, this.state);
+    console.log("Props post update", prevProps, this.props);
   }
 
   render() {
@@ -28,7 +28,7 @@ class App extends Component<IAppProps, IAppState> {
         <hr />
         <Button
           action={() => {
-            this.setState({counter:this.state.counter-1});
+            this.setState({ counter: this.state.counter - 1 });
             console.log(this.state.counter);
           }}
           bgColor="tomato"
@@ -36,10 +36,16 @@ class App extends Component<IAppProps, IAppState> {
           {" "}
           decrem -1
         </Button>
-        <Button action={() => {
-          this.setState({counter:this.state.counter+1});
-          console.log(this.state.counter)
-        }} bgColor="skyblue"> increm +1</Button>
+        <Button
+          action={() => {
+            this.setState({ counter: this.state.counter + 1 });
+            console.log(this.state.counter);
+          }}
+          bgColor="skyblue"
+        >
+          {" "}
+          increm +1
+        </Button>
       </div>
     );
   }

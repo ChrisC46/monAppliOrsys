@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 import style from "./Button.module.css";
 
 function Button(props) {
-  const [isClicked, setisClicked] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
 
   useEffect(() => {
     if (isClicked) {
       setTimeout(() => {
-        setisClicked(false);
+        setIsClicked(false);
       }, 200);
     }
   }, [isClicked]);
@@ -25,7 +25,7 @@ function Button(props) {
         color: props.color,
       }}
       onClick={(event) => {
-        setisClicked(true);
+        setIsClicked(true);
         console.log("isClicked :", isClicked);
         if(props.action && typeof props.action==='function'){
             props.action();

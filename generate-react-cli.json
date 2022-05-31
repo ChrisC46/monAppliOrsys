@@ -17,7 +17,7 @@
       "withTest": true,
       "withStory": false,
       "withLazy": false,
-      "customTemplates":{"component":"grc-templates/func_hook/TemplateName.tsx"}
+      "customTemplates":{"component":"grc-templates/hook_func/TemplateName.tsx"}
     },
     "ui":{
       "path": "src/App/components/ui",
@@ -25,7 +25,7 @@
       "withTest": true,
       "withStory": false,
       "withLazy": false,
-      "customTemplates":{"component":"grc-templates/func_hook/TemplateName.tsx"}
+      "customTemplates":{"component":"grc-templates/ui_func/TemplateName.tsx"}
     },
     "layout":{
       "path": "src/App/components/layout",
@@ -33,7 +33,7 @@
       "withTest": true,
       "withStory": false,
       "withLazy": false,
-      "customTemplates":{"component":"grc-templates/func_hook/TemplateName.tsx"}
+      "customTemplates":{"component":"grc-templates/hook_func/TemplateName.tsx"}
     }
   }
 }

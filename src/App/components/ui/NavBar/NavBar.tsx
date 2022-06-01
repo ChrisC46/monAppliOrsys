@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import style from "./NavBar.module.css";
 import { Container, Navbar , Nav} from "react-bootstrap";
-
+import {LinkContainer} from 'react-router-bootstrap'
 interface INavBarProps {}
-interface INavBarState {}
 
-const initialState: INavBarState = {};
+
 
 const NavBar: React.FC<INavBarProps> = (props) => {
   
@@ -14,11 +13,21 @@ const NavBar: React.FC<INavBarProps> = (props) => {
     <div className={style.NavBar} data-testid="NavBar">
      <Navbar bg="primary" variant="dark">
       <Container>
-      <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+        <LinkContainer to='/'>
+        <Navbar.Brand>Navbar</Navbar.Brand>
+        </LinkContainer>
         <Nav className="me-auto">
-        <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#features">Features</Nav.Link>
-      <Nav.Link href="#pricing">Pricing</Nav.Link>
+        <LinkContainer to='/'>
+        <Nav.Link>Home</Nav.Link>
+        </LinkContainer>
+        <LinkContainer to="/thumbnail">
+        <Nav.Link>Features</Nav.Link>
+        </LinkContainer>
+        <LinkContainer to="/editor/0">
+        <Nav.Link>Pricing</Nav.Link>
+        </LinkContainer>
+      
+      
     </Nav>
     </Container>
   </Navbar>

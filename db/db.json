@@ -1,0 +1,60 @@
+{
+  "memes": [
+    {
+      "id": 0,
+      "titre": "",
+      "text": "Serial Killer company",
+      "x": 38,
+      "y": 38,
+      "fontWeight": "800",
+      "fontSize": 21,
+      "underline": false,
+      "italic": true,
+      "imageId": 0,
+      "color": "#c41c1c"
+    },
+    {
+      "titre": "",
+      "text": "Dummy Brothers",
+      "x": 38,
+      "y": 38,
+      "fontWeight": "800",
+      "fontSize": 21,
+      "underline": false,
+      "italic": true,
+      "imageId": 1,
+      "color": "#c41c1c",
+      "id": 1
+    }
+  ],
+  "images": [
+    {
+      "id": 0,
+      "name": "goudig",
+      "h": 168,
+      "w": 300,
+      "url": "images.jpg"
+    },
+    {
+      "id": 1,
+      "name": "quimper",
+      "h": 183,
+      "w": 275,
+      "url": "t2.jpg"
+    },
+    {
+      "id": 2,
+      "name": "paris",
+      "h": 182,
+      "w": 277,
+      "url": "t3.jpg"
+    },
+    {
+      "id": 3,
+      "name": "lyon",
+      "h": 182,
+      "w": 277,
+      "url": "t4.jpg"
+    }
+  ]
+}

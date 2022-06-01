@@ -1,6 +1,6 @@
 import { ImageInterface, MemeInterface } from "orsys-tjs-meme";
 import React from "react";
-import Button from "../Button/Button";
+import Button, { DefaultButton, WarningButton } from "../Button/Button";
 import styles from "./MemeForm.module.css";
 
 //types
@@ -165,8 +165,8 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
           </div>
         </div>
         <div className={styles.half}>
-          <Button>b1</Button>
-          <Button>b2</Button>
+          <DefaultButton>Save</DefaultButton>
+          <WarningButton>delete</WarningButton>
         </div>
       </form>
     </div>

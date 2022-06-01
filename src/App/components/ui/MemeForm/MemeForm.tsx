@@ -1,7 +1,10 @@
+import { connect } from "react-redux";
 import { ImageInterface, MemeInterface } from "orsys-tjs-meme";
 import React from "react";
+import { ACTIONS_CURRENT } from "../../../store/store";
 import Button, { DefaultButton, WarningButton } from "../Button/Button";
 import styles from "./MemeForm.module.css";
+
 
 //types
 interface IMemeFormProps {
@@ -30,12 +33,20 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
         />
         <hr />
         <h2>Image</h2>
-        <select value={props.meme.imageId} onChange={evt=>{
-            props.onMemeChange({...props.meme, imageId:Number(evt.target.value)})
-        }}>
-          {
-            props.images.map((e,i)=><option value={e.id} key={'select-option-'+i}>{e.name}</option>)
-          }
+        <select
+          value={props.meme.imageId}
+          onChange={(evt) => {
+            props.onMemeChange({
+              ...props.meme,
+              imageId: Number(evt.target.value),
+            });
+          }}
+        >
+          {props.images.map((e, i) => (
+            <option value={e.id} key={"select-option-" + i}>
+              {e.name}
+            </option>
+          ))}
         </select>
         <hr />
         <h2>text</h2>
@@ -173,3 +184,23 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
   );
 };
 export default MemeForm;
+
+function mapStateToProps(storeState: any, parentProps: any) {
+  return {
+    ...parentProps,
+    meme: storeState.current,
+    images: storeState.ressources.images
+  };
+}
+
+function mapDispatchToProps(dispatch: Function) {
+  return {
+    onMemeChange: (meme: MemeInterface) => {
+      dispatch({ type: ACTIONS_CURRENT.UPDATE_CURRENT, value: meme });
+    },
+  };
+}
+export const ConnectedMemeForm = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MemeForm);
